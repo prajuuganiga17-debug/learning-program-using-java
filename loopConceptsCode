@@ -1,0 +1,100 @@
+package practice;
+import java.util.*;
+
+
+public class Loops {
+	public static void printFactors(int n) {
+		for(int i=1;i<n;i++) {
+			if(n%i==0) {
+				System.out.println(i);
+			}
+		}
+	}
+	public static int countPrime(int n) {
+		int count=0;
+		for(int i=1;i<=n;i++) {
+			if(n%i==0) {
+				count++;
+			}
+		}
+		return count;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+		System.out.println("enter the number n");
+		int n= scan.nextInt();
+		//understadning for loop
+//		for(intialization;condition;increment /decrement ) {
+//			body of the loop
+//		}
+//		
+//		//print  1 to n numbers
+//		for(int i=1;i<=n;i++) {
+//			System.out.println(i);
+//		}
+		
+//		// print the numbers from n to 1
+//		for(int i=n;i>=1;i--) {
+//			System.out.println(i);
+//		}
+//		
+		
+//		//print the multiple of 3 tables
+//		for(int i=3;i<=30;i+=3) {
+//			System.out.println(i);
+//		}
+//		
+		// given number n till that print the numbers which are divisible by a and b
+//		int a= scan.nextInt();
+//		int b= scan.nextInt();
+//		for(int i=1;i<=20;i++) {
+//			if(i%a==0 || i%b==0) {
+//				System.out.println(i);
+//			}
+//		}
+//		
+//		
+//		//print the tables like 5x1 = 5 till 5x10=50
+//		for(int i=1;i<=10;i++) {
+//			System.out.println(n+" x "+i+" = "+n*i);
+//		}
+		
+		//common factors  factors means the numbers which can divide the given number without leaving the remainder mean 0 remainder
+		//i/p 10 and o/p is 1,2,5,10
+		
+//		for(int i=1;i<=n;i++) {
+//			if(n%i==0) {
+//				System.out.println(i);
+//			}
+//		}
+		
+		//by using the method implementing the above program
+//		printFactors(n);//method calling
+		
+		
+		
+		
+		//count the number of factors
+		System.out.println(countPrime(n));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}
