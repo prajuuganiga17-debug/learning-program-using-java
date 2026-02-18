@@ -1,0 +1,81 @@
+package programming;
+
+import java.util.Scanner;
+
+public class Day5 {
+	public static int chechPrime(int n) {
+		int count=0;
+		for(int i=1;i<=n;i++) {
+			if(n%i==0) {
+				count++;
+			}
+		}
+		return count;
+	}
+	public static int checkPrime(int n) {
+		int count=0;
+		for(int i=2;i<=n/2;i++) {
+			if(n%i==0) {
+				count++;
+			}
+		}
+		return count;
+	}
+	
+	public static String checkPrime2(int n) {
+		
+		for(int i=2;i<=n/2;i++) {
+			if(n%i==0) {
+				return "not Prime";
+			}
+		}
+		return " prime";
+	}
+public static boolean checkPrime3(int n) {
+		
+		for(int i=2;i<=n/2;i++) {
+			if(n%i==0) {
+				return false;
+			}
+		}
+		return true;
+	}
+	public static void rangeOfPrime(int n,int m) {
+		for(int i=n;i<=m;i++) {
+			if(checkPrime3(i)) {
+				System.out.println(i);
+			}
+		}
+	}
+	public static void printPrime(int n) {
+		int coun=1;
+		for(int i=2;coun<=n;i++) {
+			if(checkPrime3( i) ) {
+				System.out.println(i);
+				coun++;
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+//		int count
+//		if(checkPrime(n)==0) {
+//			System.out.println("Prime");
+//		}
+//		else {
+//			System.out.println("not prime");
+//		}
+//		System.out.println(checkPrime2(n));
+//		int n1=sc.nextInt();
+//		int n2=sc.nextInt();
+		
+//		rangeOfPrime(n1, n2);
+		printPrime(n);
+//		
+
+	}
+
+}
