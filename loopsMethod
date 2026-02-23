@@ -1,0 +1,106 @@
+package com.Git.pushing.updates;
+
+import java.util.Scanner;
+
+public class LoopsMethod {
+	static int CountingNumbers(int n){
+
+		int count=0;
+		while(n!=0) {
+			n/=10;
+			count++;
+		}
+		return count;
+	}
+	static	int printSum(int n){
+		int sum=0;
+		while(n!=0) {
+			int rem=n%10;
+			sum+=rem;
+			n/=10;
+		}
+		return sum>0?sum: -sum;
+	}
+	static	int sumEven(int n){
+		int sum=0;
+		while(n!=0) {
+			int rem=n%10;
+			sum+=rem%2==0?rem:0;
+			n/=10;
+		}
+		return sum>0?sum: -sum;
+	}
+	static	int reverseNumber(int n){
+		int rev=0;
+		while(n!=0) {
+			int rem=n%10;
+			rev=rev*10+rem;
+			n/=10;
+		}
+		return rev;
+
+	}
+	static	int euclideanGcd(int n,int m){{
+		while(n!=m) {
+			if(m>n) {
+				m=m-n;
+			}
+			else {
+				n=n-m;
+			}
+		}
+		return n;
+	}
+	}
+	
+	static int euclideanGcd2(int a,int b) {
+		
+		while(a!=0 && b!=0) {
+			if(a>b) {
+				a=a%b;
+			}
+			else {
+				b=b%a;
+			}
+		}
+		return a+b;
+		
+	
+	}
+	public static boolean isAmstrong(int n) {
+		int count=CountingNumbers(n);
+		int arm=0;
+		int originalNumber=n;
+		while(n!=0) {
+			int last=n%10;
+			arm=arm+(int)Math.pow(last, count);
+			n/=10;
+		}
+		return originalNumber==arm;
+	}
+	public static void printAmstrong(int n1, int n2) {
+		for(int i=n1;i<=n2;i++) {
+			if(isAmstrong(i)) {
+				System.out.println(i);
+			}
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int n1=sc.nextInt();
+		int n2=sc.nextInt();
+		
+		//		System.out.println(CountingNumbers(n));
+		//		System.out.println(printSum(n));
+		//		System.out.println(sumEven(n));
+		//		System.out.println(reverseNumber(n));
+//		System.out.println(euclideanGcd( n, m)); 
+//		System.out.println(euclideanGcd2( n, m));
+		printAmstrong( n1, n2);
+		
+
+
+	}
+
+}
