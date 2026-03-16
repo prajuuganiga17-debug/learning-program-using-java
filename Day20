@@ -1,0 +1,106 @@
+package com.tap.classes;
+
+import java.util.Scanner;
+
+public class Day20 {
+	public static String removeSpecial(String s) {
+		String t="";
+		for(int i=0;i<s.length();i++) {
+			char ch=s.charAt(i);
+			if(((ch>='A'&& ch<='Z')||(ch>='a'&& ch<='z')||(ch>='0'&&ch<='9'))) {
+				t+=ch;
+				
+			}
+		}
+		return t;
+	}
+	//upperCase lowecase to 
+	public static String uppperToLowerCase(String s){
+		String t="";
+		for(int i=0;i<s.length();i++) {
+			char ch=s.charAt(i);
+			if(ch>='A'&&ch<='Z') {
+				t=t+(char)(ch+32);
+			}
+			else {
+				t+=ch;
+			}
+		}
+		return t;
+	}
+	public static String swapCase(String s){
+		String t="";
+		for(int i=0;i<s.length();i++) {
+			char ch=s.charAt(i);
+			if(ch>='A'&&ch<='Z') {
+				t=t+(char)(ch+32);
+			}
+			else if(ch>='a'&&ch<='z') {
+				t=t+(char)(ch-32);
+			}
+			else {
+				t=t+ch;
+			}
+		}
+		return t;
+	}
+	//trim the spaces before and after the spaces of text
+	public static String trimSpaces(String s) {
+		int si=0,ei=0;
+		String t="";
+		for(int i=0;i<s.length();i++) {
+			if(s.charAt(i)!=' ') {
+				si=i;
+				break;
+				
+			}
+		}
+		for(int i=s.length()-1;i>=0;i--) {
+			if(s.charAt(i)!=' ') {
+				ei=i;
+				break;
+			}
+		}
+		for(int i=si;i<=ei;i++) {
+			char ch=s.charAt(i);
+			t=t+ch;
+		}
+		return t;
+	}
+//spces extra spaces at the middle also be removed
+	public static String trimSpacesMiddle(String s) {
+		int si=0,ei=0;
+		String t="";
+		for(int i=0;i<s.length();i++) {
+			if(s.charAt(i)!=' ') {
+				si=i;
+				break;
+				
+			}
+		}
+		for(int i=s.length()-1;i>=0;i--) {
+			if(s.charAt(i)!=' ') {
+				ei=i;
+				break;
+			}
+		}
+	       for(int i = si; i <= ei; i++) {
+	            if(s.charAt(i) != ' '||s.charAt(i) == ' ' && s.charAt(i+1) != ' ') {
+	                t += s.charAt(i);
+	            }
+//	            else if(s.charAt(i) == ' ' && s.charAt(i+1) != ' ') {
+//	                t += s.charAt(i);
+//	            }
+	        }
+
+	        return t;
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s=sc.nextLine();
+		System.out.println(trimSpacesMiddle(s));
+		
+	}
+
+}
