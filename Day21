@@ -1,0 +1,58 @@
+package com.tap.classes;
+
+import java.util.Scanner;
+
+public class Day21 {
+	public static String astericsInsert(String s) {
+		String t="";
+		for(int i=0;i<s.length();i++) {
+			char ch=s.charAt(i);
+			if(ch=='a') {
+				t=t+'*'+ch;
+			}
+			else {
+				t=t+ch;
+			}
+		}
+		return t;
+	}
+	//print hte indix of character
+	public static int findIndex(String s,char k) {
+		for(int i=0;i<s.length();i++) {
+			if(s.charAt(i)==k) {
+				return i;
+			}
+		}
+		return -1;
+	}
+	public static String subsequence(String s1,String s2) {
+		int i=0,j=0;
+		while(i<s1.length() && j<s2.length()) {
+			if(s1.charAt(i)==s2.charAt(j)) {
+				i++;
+				j++;
+			}
+			else {
+				i++;
+			}
+		}
+		return j==s2.length()?"Yes":"No";
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String input1 = sc.nextLine();
+		
+		String input2 = sc.nextLine();
+//		char k=sc.next().charAt(0);
+//		System.out.println(astericsInsert(input));
+//		int index=findIndex(input, k);
+//		if(index==-1) {
+//			System.out.println("character does not found");
+//		}
+//		else {
+//			System.out.println("character found at the index: "+index);
+//		}
+		System.out.println(subsequence(input1,input2));
+	}
+
+}
